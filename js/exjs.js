@@ -41,5 +41,5 @@ function openNew(pagename) {
   // 现在一般浏览器 默认都会打开一个新的标签页来取代 新窗口
   var p = 'pagename='+pagename;
   p = escape(p); // escape 编码
-  window.open("../about/module.html"+'?'+p);
+  window.open("./about/module.html"+'?'+p);  // 调用的路径为 .
 }

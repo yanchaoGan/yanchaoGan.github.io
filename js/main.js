@@ -39,11 +39,6 @@ function test(a,b,c) {
   alert('a = '+ a+' b='+b+' c='+c);
 }
 
-//blog
-function blogShowContent() {
-
-}
-
 /*
 // innerstr = innerstr + "<li class='bloglistitem'> \
 //           <div class='bloglistitemcontain'>  \
@@ -118,7 +113,9 @@ function createNode(filename,filedate,filedes) {
 }
 
 function sideBlog(){
-  var p =  "blog/list.json";
+
+  var p =  "./blog/list.json"; // 这里的path 路径，难道是调用此函数的 index.html 为当前路径 .
+  console.log('$$$$$$');
   loadRequest(p,function(result){
     var myobj =  eval(result); // 转化为 json 对象了
     var innerstr = '';
@@ -132,7 +129,7 @@ function sideBlog(){
     for(var i=0;i<myobj.length;i++){
       filepath = myobj[i].filepath;
       filename = myobj[i].filename;
-
+      filepath = '.'+filepath;// 使用相对路径
       console.log(filename);
       loadRequest(filepath,function(result,index){
         console.log(myobj , index,result);
