@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!--
+	head 头部信息的容器
+-->
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta charset="utf-8"/>
+	<meta name="keywords" content="甘延超,gychao,html,iOS"/>
+	<meta name="description" content="嗨，我是甘延超(@gyc),一名来自北京的 iOS / Web 开发者。正在修行，寻求源泉。">
+	<meta name="author" content="Yanchao Gan">
+
+	<link rel="icon" href="/images/iconMe.png" type="image/png">
+	<title dir="ltr">Gold 's Egg</title>
+<!-- start link css-->
+	<link rel="stylesheet" href="/css/base.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/animateleft.css" media="screen" title="no title" charset="utf-8">
+<!-- end css -->
+
+	<script type="text/javascript" src='js/main.js'>
+	</script>
+	<script type="text/javascript" src='js/request.js'>
+	</script>
+	<script type="text/javascript" src='js/exjs.js'>
+	</script>
+
+</head>
+
+<body>
+	<div class="index" id="index">
+		<!-- 背景图片 -->
+		<img src="/images/bgIndex.png" alt="bg" style="
+		color:yellow;
+		width:100%;
+		height:100%;
+		z-index:-1;
+		position:absolute;
+		left:0px;
+		top:0px;
+		" />
+
+			<header>
+				<div class="center">
+						<a href="#" onclick="showHome()">
+							<img class="logo" src="images/iconMe.png"  alt="me" />
+						</a>
+						<a href="#" class="name" onclick="showAnimate()"><span >Gold's Egg</span></a>
+
+						<p class="des">
+							明德自强 求是力行
+						</p>
+						<hr color="red" />
+						<p>
+								嗨，我是甘延超(@gyc),一名来自北京的 iOS / Web 开发者。<br />
+								正在修行，寻求源泉。
+						</p>
+						<hr />
+						<div class="navigation-container">
+							<nav class="navigation">
+								<ul class="navigation-content">
+									<li class="navigation-list"><a href="#" title="访问博客" onclick="showAnimate()">博客</a></li>
+									<li class="navigation-list"><a href="#" title="关于" onclick="openNew('about')">关于</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+	</div>
+
+	<div class="blog" id="blog">
+			<p id="visitedcount">
+			</p>
+			<hr>
+			<div class="blog-ul">
+				<ul  class="bloglist" id="bloglist"></ul>
+			</div>
+
+			<footer class="copyright">
+				<div class="copyrightcenter">
+					©gychao 2016-05-01
+				</div>
+			</footer>
+	</div>
+
+	<!-- window 尺寸变化 -->
+	<script type="text/javascript">
+		window.onresize = function(){
+			var width = parseInt(window.innerWidth);
+			if (width < 618) {
+				updateClass('blog','blog bloghidden');
+			}else {
+				updateClass('blog','blog');
+			}
+		}
+
+		<!-- start js  get list json-->
+		window.onload =  function(){
+			sideBlog();
+		};
+	</script>
+
+</body>
+
+</html>

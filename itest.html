@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <style media="screen">
+      .right{
+        text-align: right;
+      }
+    </style>
+  </head>
+
+
+
+
+  <body>
+我最爱
+<!-- 在html 中， 换行 空格 文字，都算 childnode，类型是 ＃text
+  childNodes ，只找下一级子节点
+  模拟ios 的tag 属性，可以添加给 元素，只不过没有UI效果，同样可以达到，标记的目的
+ -->
+<ul ><li  type='1' value="100" tag="100">第一</li></ul>
+<script type="text/javascript">
+  var uls = document.getElementsByTagName('ul');
+
+  var attrs = uls[0].childNodes;
+  for (var i = 0; i < attrs.length; i++) {
+    console.log(attrs[i].nodeName,attrs.length,uls[0].nodeValue);
+  }
+  console.log("***"+attrs[0].nodeName);
+
+  // window.location.assign('http://www.baidu.com');
+</script>
+
+<!-- // 标签名不能省略 -->
+<'' class="right">right</''>
+
+
+    <!-- test ajax -->
+    <script type="text/javascript">
+      function loadRequest(getfilepath,call) {
+          var xmlhttp;
+          xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function(){
+           if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+             var result =  xmlhttp.responseText;
+             call(result);
+            }
+         };
+
+     	   xmlhttp.open("GET",getfilepath,true);
+     	   xmlhttp.send();
+      }
+
+      var p = 'name='+'gyc'+'&'+'order='+'3'; // for test
+      loadRequest("Ajax/get.php?"+p,function(result){
+        document.getElementById("ajax").innerHTML = result;
+      });
+      loadRequest("blog/list.json",function(result){
+        var myobj =  eval(result); // 转 json 对象 字典数组
+        console.log(myobj);
+        for(var i=0;i<myobj.length;i++){
+        }
+        document.getElementById("json").innerHTML = "filename is "+ myobj[0].filename
+          + "<br />" + "file path is " + myobj[0].filepath;
+      });
+
+      loadRequest("blog/message/file1.txt",function(result){
+        console.log(result);
+        document.getElementById("txt").innerHTML = result;
+      });
+
+    </script>
+
+    <p id="ajax">
+    test
+    </p>
+    <!-- <input type="file" name="name" value="" /> -->
+    <br \>
+    <br \>
+    <br \>
+    <br \>
+
+    <p id="json">
+    </p>
+    <p id="txt">
+    </p>
+
+
+    <div class="">
+      height
+      <hr color="red"/>
+    </div>
+
+
+
+
+    <!-- 读取文件 for ie -->
+    <!-- <script type="text/javascript">
+      var fso = new ActiveXObject("Scripting.FileSystemObject");
+      var f1 = fso.GetFile("Ajax/a.txt");
+      alert("File last modified: " + f1.DateLastModified);
+    </script> -->
+
+
+
+  </body>
+
+
+</html>

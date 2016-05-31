@@ -1,0 +1,231 @@
+
+/*
+css 注释
+
+*/
+
+@charset "UTF-8";
+*{
+  margin: 0px 0px;
+  padding: 0px 0px;
+  border: 0;
+}
+
+/*
+ 首页
+*/
+.index{
+  width: 100%;
+  height: 100%;
+  min-width: 224px;
+  /*background: #666666 url(/images/bgIndex.png) no-repeat ;*/
+  /*background-size: cover;*/
+  /*background-clip: border-box;*/
+  position: fixed;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  /*margin: 0px 0px;*/
+  z-index: 300;
+}
+/*
+  居中
+*/
+.center{
+position: relative;
+/*background-color: red;*/
+margin: 0px auto;
+top: 100px;
+width: 50%;
+min-width: 220px;
+}
+
+/*
+  logo
+*/
+div.center .logo{
+  width: 100px;
+  height: 100px;
+  /*border-style: ;
+  border-color: white;
+  border-width: 10px;*/
+}
+
+/*
+  logo 下 名字
+*/
+div.center .name{
+  font-size: 2em;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+/*座右铭*/
+div.center .des{
+  font-size: 1.1em;
+}
+
+/*<div class="navigation-container">
+  <nav class="navigation">
+    <ul class="navigation-content">
+      <li class="navigation-list"><a href="#" title="访问博客">博客</a></li>
+      <li class="navigation-list"><a href="#" target="_blank">关于</a></li>
+    </ul>
+  </nav>
+</div>
+</div>*/
+nav li{
+  display: inline;
+}
+/*统一的ul*/
+nav ul{
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-container{
+  width: 100%;
+  height: 100px;
+  margin: 50px auto;
+  /*background-color: yellow;*/
+  position: relative;
+  text-align: center;
+}
+
+.navigation-content{
+  position: relative;
+  width: 224px;
+  height: 100px;
+  margin: 0 auto;
+  /*background-color: green;*/
+}
+
+li a{
+  text-decoration: none;
+  color: white;
+  width: 80px;
+  /*
+导航列表项目 水平居中
+80*2 + 20*3 + 2*2 （边框 1+1） ＝ 264
+  */
+  margin: 0px 0px 0px 20px;
+  border: 1px solid white;
+  border-radius: 20px;
+  float: left;
+  position: relative;
+  /*padding: 10px;*/
+}
+
+
+/*
+blog
+浏览器页面 是可以随意缩小的， 但是 元素 的最小width 是可以 固定的
+*/
+.blog{
+    display:  block;
+    color: rgb(51, 51, 51);
+    width: 60%;
+    margin-left: 40%;
+    background-color: rgb(0, 0, 0,0.9);
+    /*position: relative;*/
+    z-index: 200;
+    font-size: 20px;
+}
+.bloghidden{
+  display: none;
+}
+
+.blog-ul{
+
+  /*position: relative;*/
+  /*background-color: yellow;*/
+}
+.bloglist{
+  list-style: none;
+  list-style-type: none;
+}
+
+.bloglistitem{
+  margin-left: 50px;
+  margin-right: 20px;
+  padding-top: 50px;
+}
+
+.blogtitleinfo{
+  color: rgb(51, 51, 51);
+  font-size: 1.5em;
+
+}
+ /*create time*/
+.blogtitletime{
+  color: rgb(154, 154, 154);
+  font-size: 0.8em;
+  /*margin-right: 20px;
+  right: 20px;*/
+  left: 60%;
+  position: relative;
+}
+
+.blogdesinfo{
+  color: rgb(179,179,179);
+  font-size: 1em;
+  margin-top: 10px;
+}
+/*更多按钮*/
+.blogMore{
+  margin-top: 10px; 
+}
+
+/*id 选择器*/
+#visitedcount{
+  position: relative;
+  margin-left: 10px;
+  top: 10px;
+}
+
+.copyright{
+  display: block;
+  margin-top: 100px;
+  width: 100%;
+  height: 48px;
+  text-align: center;
+  background-color: black;
+}
+.copyrightcenter{
+  position: relative;
+  color: white;
+  top: 14px;
+  font-size: 0.9em;
+}
+
+/*模版的 footer*/
+.footer{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 47px;
+  text-align: center;
+  background-color: black;
+}
+
+.footercenter{
+  color: white;
+  margin-top: 14px;
+}
+
+/*@media all and (min-width:500px) {
+  .blog{
+    display: none;
+  }
+}
+
+@media all and (min-width:555px) {
+  .blog{
+    display: block;
+  }
+}*/

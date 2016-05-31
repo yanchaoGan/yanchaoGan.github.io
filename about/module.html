@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!-- safari 不起作用 -->
+    <link rel="icon" type="image/png" href="../images/mbox.png" >
+
+    <link rel="stylesheet" href="/css/base.css" media="all" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/about.css" media="all" title="no title" charset="utf-8">
+
+    <script type="text/javascript" src='../js/request.js'>
+    // 这里写的js 代码会被忽略掉
+    </script>
+    <script type="text/javascript" src='../js/footer.js'>
+    // 这里写的js 代码会被忽略掉
+    </script>
+    <script type="text/javascript" src='../js/exjs.js'>
+    // 这里写的js 代码会被忽略掉
+    </script>
+
+    <script type="text/javascript">
+      getTitle();
+    </script>
+  </head>
+
+
+  <body>
+    <!-- &nbsp; 用来输出空格  带 ;-->
+    <div class="audioIcon">
+        <audio id="audio" src="../music/beyondGHSY.mp3"  type ="audio/mp3"
+               loop="loop">
+          音乐
+        </audio>
+        <a href="#" onclick="dealAudio()"><img class="playIcon" src="../images/mbox.png" alt="音乐" /></a>
+    </div>
+
+    <div class="modulecenter">
+          <p class="content" id="moduleContent">
+            module
+          </p>
+    </div>
+
+<!-- 可用js 格式输出 -->
+    <script type="text/javascript">
+      footer();
+      loadContent();
+    </script>
+
+  </body>
+
+</html>

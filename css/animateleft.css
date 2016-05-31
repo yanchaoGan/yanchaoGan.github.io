@@ -1,0 +1,17 @@
+@keyframes movetoleft{
+  from {
+  width: 100%;
+  font-size: 20px;
+  }
+  to {
+    width: 40%;
+    font-size: 18px;
+  }
+}
+.moveindex{
+  animation: movetoleft 0.5s ease;
+  -moz-animation: movetoleft 0.5s ease; /* firefox*/
+  -webkit-animation:movetoleft 0.5s ease; /*safari and chrome*/
+  -o-animation:movetoleft 0.5s ease;/*opera*/
+  animation-fill-mode: forwards;
+}
