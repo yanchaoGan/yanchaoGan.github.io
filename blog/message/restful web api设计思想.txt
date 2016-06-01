@@ -1,0 +1,19 @@
+<b>一，why</b><br>
+和server 的coder 沟通最多的问题，就是api设计规范了。为了解决这个问题，查看了比较多的资料:
+eg:http://www.360doc.com/content/15/0206/09/15077656_446615750.shtml,认为比较
+靠谱的是restful 风格的规范:
+<br><br>
+<b>二，how</b><br>
+这里主要参阅了:<br/>[
+<a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html">1</a> ,
+<a href="http://www.cnblogs.com/shanyou/archive/2012/05/12/2496959.html">2</a>,
+<a href="https://codeplanet.io/principles-good-restful-api-design/">3</a>]
+
+<br><br>
+<b>三，get what</b><br>
+
+a.API域名与网站域名分开，比如使用 https://api.example.com 这样的方式。<br/>
+b.API请求中应该加入API版本号，比如在URL中加入版本号，如https://api.example.com/v1/,
+这样当API升级的或者改动的时候，可以保留旧的API服务，把新的API版本添加到https://api.example.com/v2/ 上，
+这样依然可以服务使用旧的API的App。这点尤为有效。<br/>
+c.使用http method 对应 server常用 的CRUD (Create, Read, Update, Delete)操作，就像是 定位到 数据库的一张table，来直接进行操作。清晰简洁。

@@ -8,6 +8,10 @@
 p{
   text-indent:2em
 }
+a{
+  text-decoration:overline;
+  color: white;
+}
 
 /*图片居中*/
 img{
