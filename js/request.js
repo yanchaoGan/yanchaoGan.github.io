@@ -11,7 +11,7 @@ function loadRequest() {
   var getfilepath = arguments[0]||null;
   var call = arguments[1]||null;
   var index = arguments[2];
-  console.log('*****'+index);
+  //console.log('*****'+index);
   loadData(getfilepath,call,index);
 }
 function loadData(getfilepath,call,index) {

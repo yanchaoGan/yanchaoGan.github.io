@@ -1,13 +1,12 @@
 
 function showAnimate(){
-  // var px =  parseInt('78px')
-  // console.log(px);
   var classNameOfIndex = document.getElementById('index').className;
   if (classNameOfIndex.indexOf('moveindex') == -1){
     document.getElementById('index').className = classNameOfIndex + ' '+'moveindex';
   }else {
     console.log('已经更改了class');
   }
+  // $('#index').animate({width:"100px"});
 }
 
 
@@ -63,7 +62,7 @@ function test(a,b,c) {
 // successcount+=1;
 // if (successcount == myobj.length) {
 //   //全部请求成功
-//   console.log('innerstr is ' + innerstr);
+//   //console.log('innerstr is ' + innerstr);
 //   $('bloglist').innerHTML = innerstr;
 // }
 },i);
@@ -90,8 +89,8 @@ function createNode(filename,filedate,filedes) {
       var p = document.createElement('p');
       p.setAttribute('class','blogdesinfo');
       p.innerHTML = filedes;
-      // var text = document.createTextNode(filedes); 这样对文档中的标签就不识别了
-      // p.appendChild(text);
+      var text = document.createTextNode(filedes); //这样对文档中的标签就不识别了
+      p.appendChild(text);
     div.appendChild(p);
       var button = document.createElement('button');
       button.setAttribute('class','blogMore');
@@ -102,11 +101,19 @@ function createNode(filename,filedate,filedes) {
       button.onclick = function(){
         // alert(filename);
         // 这里的这个this 就是 button node
-        // console.log(this.getAttribute('class'));
+        // //console.log(this.getAttribute('class'));
         openNew(filename);
       };
     div.appendChild(button);
-
+    //   var hr = document.createElement('hr');
+    //   hr.setAttribute('style','{  border-top-width: 1px; \
+    //      border-top-style: solid;\
+    //      border-top-color: #fefefe;\
+    //      width: 50%;\
+    //      position: relative;\
+    //      left: 25%;}');
+    //   hr.setAttribute('width','50%');
+    // div.appendChild(hr);
   linode.appendChild(div);
 
   return linode;
@@ -114,8 +121,43 @@ function createNode(filename,filedate,filedes) {
 
 function sideBlog(){
 
+  // 1、可以用jQuery代替
+  // 引用jQuery后，使用$(".ClassName")等方法获取元素。
+  // ie8 http://www.xuebuyuan.com/2139615.html
+  // if (!window.console || !console.firebug){
+  //     var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml", "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
+  //
+  //     window.console = {};
+  //     for (var i = 0; i < names.length; ++i)
+  //         window.console[names[i]] = function() {}
+  // }
+  //
+  // // ie8 classname http://www.songker.com/index.php/post/55.html
+  // //解决IE8之类不支持getElementsByClassName
+  // if (!document.getElementsByClassName) {
+  //     document.getElementsByClassName = function (className, element) {
+  //         var children = (element || document).getElementsByTagName('*');
+  //         var elements = new Array();
+  //         for (var i = 0; i < children.length; i++) {
+  //             var child = children[i];
+  //             var classNames = child.className.split(' ');
+  //             for (var j = 0; j < classNames.length; j++) {
+  //                 if (classNames[j] == className) {
+  //                     elements.push(child);
+  //                     break;
+  //                 }
+  //             }
+  //         }
+  //         return elements;
+  //     };
+  // }
+
+  if (!document.getElementsByClassName || !window.console){
+    alert('请使用浏览器 极速模式 访问页面');
+  }
+
   var p =  "./blog/list.json"; // 这里的path 路径，难道是调用此函数的 index.html 为当前路径 .
-  console.log('$$$$$$');
+  //console.log('$$$$$$');
   loadRequest(p,function(result){
     var myobj =  eval(result); // 转化为 json 对象了
     var innerstr = '';
@@ -125,14 +167,14 @@ function sideBlog(){
         filepath,
         filedes;
     var successcount = 0;
-    console.log(myobj);
+    //console.log(myobj);
     for(var i=0;i<myobj.length;i++){
       filepath = myobj[i].filepath;
       filename = myobj[i].filename;
       filepath = '.'+filepath;// 使用相对路径
-      console.log(filename);
+      //console.log(filename);
       loadRequest(filepath,function(result,index){
-        console.log(myobj , index,result);
+        //console.log(myobj , index,result);
         filename = myobj[index].filename;
         filedate = myobj[index].filetime;
         filepath = myobj[index].filepath;
@@ -140,7 +182,7 @@ function sideBlog(){
         // file name 去除后缀
         var fileinf = filename.split('.');
         filename = fileinf[0];
-        // console.log(filename);
+        // //console.log(filename);
         filedes = result.substring(0,100) + '...';
 
         // 第 index 个 按照 0 － n 排序
@@ -184,7 +226,7 @@ function sideBlog(){
     }else {
       localStorage.pagecount = 1;
     }
-    $('visitedcount').innerHTML = "嘿, 这是第<b> " +  localStorage.pagecount + " </b>次访问!";
+    $('#visitedcount').html("嘿, 这是第<b> " +  localStorage.pagecount + " </b>次访问!");
   }
   // savefile('aa.txt','hello');
 };

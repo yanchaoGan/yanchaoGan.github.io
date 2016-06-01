@@ -8,9 +8,15 @@
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta http-equiv="Expires" content="0">
+	<!-- 默认用急速内核，增加标签：
+	默认用急速内核，增加标签：<meta name="renderer" content="webkit">
+	默认用ie兼容内核，增加标签：<meta name="renderer" content="ie-comp">
+	默认用ie标准内核，增加标签：<meta name="renderer" content="ie-stand">
+ -->
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
 	<meta charset="utf-8"/>
 	<meta name="keywords" content="甘延超,gychao,html,iOS"/>
-	<meta name="description" content="嗨，我是甘延超(@gyc),一名来自北京的 iOS / Web 开发者。正在修行，寻求源泉。">
+	<meta name="description" content="嗨，我是甘延超(@gyc),一名来自北京的iOS开发者。正在修行，寻求源泉。">
 	<meta name="author" content="Yanchao Gan">
 
 	<!-- 百度站长工具 -->
@@ -22,6 +28,9 @@
 	<link rel="stylesheet" href="./css/base.css"  title="no title" charset="utf-8">
 	<link rel="stylesheet" href="./css/animateleft.css" title="no title" charset="utf-8">
 <!-- end css -->
+
+<!-- jquery 3.0 pre -->
+	<script src="./js/jquery.js" charset="utf-8"></script>
 
 	<script type="text/javascript" src='./js/main.js'>
 	</script>
@@ -55,12 +64,13 @@
 						<p class="des">
 							明德自强 求是力行
 						</p>
-						<hr color="red" />
+						<!-- 关于hr ff 不显示 http://blog.sina.com.cn/s/blog_85295a3901012pzx.html -->
+						<hr />
 						<p>
-								嗨，我是甘延超(@gyc),一名来自北京的 iOS / Web 开发者。<br />
+								嗨，我是甘延超(@gyc),一名来自北京的 iOS开发者。<br />
 								正在修行，寻求源泉。
 						</p>
-						<hr />
+						<!-- <hr noshade> -->
 						<div class="navigation-container">
 							<nav class="navigation">
 								<ul class="navigation-content">
@@ -73,10 +83,10 @@
 				</header>
 	</div>
 
-	<div class="blog" id="blog">
+ 	<div class="blog" id="blog">
 			<p id="visitedcount">
+				呵呵好
 			</p>
-			<hr>
 			<div class="blog-ul">
 				<ul  class="bloglist" id="bloglist"></ul>
 			</div>
@@ -89,7 +99,7 @@
 	</div>
 
 	<!-- window 尺寸变化 -->
-	<script type="text/javascript">
+ <script type="text/javascript">
 		window.onresize = function(){
 			var width = parseInt(window.innerWidth);
 			if (width < 618) {

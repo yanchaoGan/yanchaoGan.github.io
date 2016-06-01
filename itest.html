@@ -25,9 +25,9 @@
 
   var attrs = uls[0].childNodes;
   for (var i = 0; i < attrs.length; i++) {
-    console.log(attrs[i].nodeName,attrs.length,uls[0].nodeValue);
+    //console.log(attrs[i].nodeName,attrs.length,uls[0].nodeValue);
   }
-  console.log("***"+attrs[0].nodeName);
+  //console.log("***"+attrs[0].nodeName);
 
   // window.location.assign('http://www.baidu.com');
 </script>
@@ -58,7 +58,7 @@
       });
       loadRequest("blog/list.json",function(result){
         var myobj =  eval(result); // 转 json 对象 字典数组
-        console.log(myobj);
+        //console.log(myobj);
         for(var i=0;i<myobj.length;i++){
         }
         document.getElementById("json").innerHTML = "filename is "+ myobj[0].filename
@@ -66,7 +66,7 @@
       });
 
       loadRequest("blog/message/file1.txt",function(result){
-        console.log(result);
+        //console.log(result);
         document.getElementById("txt").innerHTML = result;
       });
 

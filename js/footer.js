@@ -9,13 +9,13 @@ function footer(){
 
 // 在module 页面 点击了 版本。 就在这个页面刷新
 function showVersion() {
-  console.log("version click");
+  //console.log("version click");
   window.location.assign('../about/module.html'+'?'+'pagename=version');
 }
 
 // 处理音频
 function dealAudio() {
-  var audio = document.getElementById("audio");
+  var audio = document.getElementById('audio');
   if (audio.paused) {
     audio.play();
   }else {
@@ -67,6 +67,7 @@ function loadContent(){
     filepath = '../blog/message/'+modulePageName+'.txt';
   }
   loadRequest(filepath,function(result){
-     $('moduleContent').innerHTML = result;
+    console.log(result);
+     $('#moduleContent').html(result);
   });
 }

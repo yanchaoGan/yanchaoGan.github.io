@@ -4,9 +4,9 @@
 */
 
 // $(string id)
-var $ = function(id){
-  return document.getElementById(id);
-}
+// var $ = function(id){
+//   return document.getElementById(id);
+// }
 
 
 // style 只能获取內联样式表，所以要用currentStyle属性，而currentStyle在FireFox下
@@ -14,11 +14,11 @@ var $ = function(id){
 function getJsStyle(id,styleName){
   var p = $(id);
   if (p.currentStyle) {
-    console.log('ie');
+    //console.log('ie');
       return  $(id).currentStyle[styleName]
   }else {
     // ff
-    console.log('ff');
+    //console.log('ff');
     var $arr =$(id).ownerDocument.defaultView.getComputedStyle($(id),null);
     return $arr[styleName];
   }
