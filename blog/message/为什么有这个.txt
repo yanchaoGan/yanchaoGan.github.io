@@ -1,9 +1,9 @@
-<b>一，why？</b><br>
-最近一段时间，在看react-native:http://reactnative.cn/;想着整理一个系列记录日志，
+<b>一，why</b><br>
+最近一段时间，在看react-native和swift;想着整理一个系列记录日志，
 就有了利用 gitpage,做一个日志空间的想法。这就是为什么有这个的原因。更深一点，也许是纪录自己。
 关于git page，能否被当做blog来利用，可以参考：https://github.com/blog/272-github-pages;
-
-  <b>二，how?</b>
+<br><br>
+<b>二，how</b><br>
   <img src="../blog/assets/1-1.png" alt="1"  />project结构<br>
   <img src="../blog/assets/1-2.png" alt="2" />blog细分图 <br>
 <br/>
@@ -12,3 +12,39 @@
 这里本地使用php,将/blog/message/ 目录的所有日志文本，生成一个[{'filename':'xxx','filepath':'xxx','filetime':'xxx'},{}]格式的
 字典数组json，存储日志相关信息。（当然你也可以使用shell脚本等其它方式生成）。然后是使用模版html页面，将要访问的日志信息，拼接在url参数中，
 module.html页面，根据这些信息，利用ajax，读取message目录下对应的日志。至此，上传日志，浏览日志的流程已经完成。
+<br><br>
+<b>三，get what</b><br>
+a.h5,css3,js撸了个遍，客串了下phper，js的function还真是够随意的。<br/>
+b.解决问题的思路很重要。<br/>
+c.模块化编程对js，ios都是异常重要。其中ajax的request异步请求，这里封装了一个js文件,eg:
+<pre>
+<code>
+//  request 相关
+// xml request
+// getfilepath 文件地址
+// call 函数参数
+// ［index］ 第几个调用  可选
+function loadRequest() {
+  var getfilepath = arguments[0]||null;
+  var call = arguments[1]||null;
+  var index = arguments[2];
+  loadData(getfilepath,call,index);
+}
+function loadData(getfilepath,call,index) {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+   if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+     var result =  xmlhttp.responseText;
+     if (index != undefined) {
+       call(result,index);
+     }else {
+       call(result);
+     }
+    }
+ };
+ xmlhttp.open("GET",getfilepath,true); // false同步 性能较低  ; true 异步
+ xmlhttp.send();
+}
+</code>
+</pre>
+最后想说:web前端的coder，也是真心不容易，各种浏览器倒腾。
