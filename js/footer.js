@@ -51,7 +51,8 @@ function getTitle() {
   }
   else {
     if (pagename!=null) {
-      document.write('<title>'+pagename+'</title>');
+      var spagename = pagename.split('.')[0];
+      document.write('<title>'+spagename+'</title>');
     }
   }
 }
@@ -64,7 +65,7 @@ function loadContent(){
   }else if (modulePageName == 'version') {
     filepath = "../log/version.txt" // 版本
   }else {
-    filepath = '../blog/message/'+modulePageName+'.txt';
+    filepath = '../blog/message/'+modulePageName;
   }
   loadRequest(filepath,function(result){
     console.log(result);

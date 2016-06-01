@@ -68,7 +68,7 @@ function test(a,b,c) {
 },i);
 */
 // 先创建 li node
-function createNode(filename,filedate,filedes) {
+function createNode(filename,sfilename,filedate,filedes) {
   var linode = document.createElement('li');
   linode.setAttribute("filedate",filedate);
   linode.setAttribute('class','bloglistitem')
@@ -76,7 +76,7 @@ function createNode(filename,filedate,filedes) {
     div.setAttribute('class','bloglistitemcontain');
       var p = document.createElement('p');
       p.setAttribute('class','blogtitleinfo');
-      var text = document.createTextNode(filename);
+      var text = document.createTextNode(sfilename);
       p.appendChild(text);
     div.appendChild(p);
       var span = document.createElement('span');
@@ -89,8 +89,8 @@ function createNode(filename,filedate,filedes) {
       var p = document.createElement('p');
       p.setAttribute('class','blogdesinfo');
       p.innerHTML = filedes;
-      var text = document.createTextNode(filedes); //这样对文档中的标签就不识别了
-      p.appendChild(text);
+      // var text = document.createTextNode(filedes); //这样对文档中的标签就不识别了
+      // p.appendChild(text);
     div.appendChild(p);
       var button = document.createElement('button');
       button.setAttribute('class','blogMore');
@@ -163,6 +163,7 @@ function sideBlog(){
     var innerstr = '';
 
     var filename,
+        sfilename,// 不带 后缀名的 filename
         filedate,
         filepath,
         filedes;
@@ -174,14 +175,14 @@ function sideBlog(){
       filepath = '.'+filepath;// 使用相对路径
       //console.log(filename);
       loadRequest(filepath,function(result,index){
-        //console.log(myobj , index,result);
+        console.log(myobj , index,result);
         filename = myobj[index].filename;
         filedate = myobj[index].filetime;
         filepath = myobj[index].filepath;
 
         // file name 去除后缀
         var fileinf = filename.split('.');
-        filename = fileinf[0];
+        sfilename = fileinf[0];
         // //console.log(filename);
         filedes = result.substring(0,100) + '...';
 
@@ -189,7 +190,7 @@ function sideBlog(){
         var ulnode = document.getElementsByClassName('bloglist')[0];
         var ulChildNodes = ulnode.childNodes;
 
-        var currentNode =  createNode(filename,filedate,filedes);
+        var currentNode =  createNode(filename,sfilename,filedate,filedes);
         var objnode;
 
         if (!ulChildNodes.length) {
