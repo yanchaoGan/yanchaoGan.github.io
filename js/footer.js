@@ -72,3 +72,37 @@ function loadContent(){
      $('#moduleContent').html(result);
   });
 }
+
+
+// for duoshuo
+function duoshuo(){
+  if (modulePageName == 'about' || modulePageName == 'version') {
+    return;
+  }
+  document.write('<div class="dsmodule">  \
+    <!-- 多说评论框 start -->  \
+    <div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID"   \
+    data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>  \
+    <!-- 多说评论框 end -->  \
+  </div>');
+
+  // <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    var spagename = modulePageName.split('.')[0];
+    var id = md5(spagename);
+    var title = spagename;
+    var url = document.location;
+    var ob = document.getElementsByClassName('ds-thread')[0];
+    ob.setAttribute('data-thread-key',id);
+    ob.setAttribute('data-title',title);
+    ob.setAttribute('data-url',url);
+    duoshuoQuery = {short_name:"yanchaogan"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+  // <!-- 多说公共JS代码 end -->
+}

@@ -230,6 +230,7 @@ blog
   height: 47px;
   text-align: center;
   background-color: black;
+  z-index: 10;
 }
 
 .footercenter{
