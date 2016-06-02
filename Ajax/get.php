@@ -44,10 +44,10 @@ function tree($directory){
       // 真正的文件
       gyclog( '<br />'.$name."is real file");
       $path = substr($directory,4);
-      $filemtime = filemtime("$directory/$name");
+      $filemtime = filectime("$directory/$name");
       $filemtime = date("Y-m-d H:i:s",$filemtime);
       // php 没有 纯字典 ， 用数组来 映射字典
-    
+
       $filearr[] = ["filename"=>"$name",
                     "filepath"=>"$path/$name",
                     "filetime"=>"$filemtime",
