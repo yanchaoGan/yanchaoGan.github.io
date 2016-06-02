@@ -89,6 +89,13 @@ function createNode(filename,sfilename,filedate,filedes) {
       var p = document.createElement('p');
       p.setAttribute('class','blogdesinfo');
       p.innerHTML = filedes;
+      p.onmousemove = function(){
+        p.className = 'blogdesinfo'+' '+'blogdesinfoselect';
+      };
+      p.onmouseout = function(){
+        p.className = 'blogdesinfo';
+      };
+
       // var text = document.createTextNode(filedes); //这样对文档中的标签就不识别了
       // p.appendChild(text);
     div.appendChild(p);
@@ -118,6 +125,7 @@ function createNode(filename,sfilename,filedate,filedes) {
 
   return linode;
 }
+
 
 function sideBlog(){
 

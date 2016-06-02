@@ -42,7 +42,8 @@ function loadData(getfilepath,call,index) {
      }
     }
  };
- xmlhttp.open("GET",getfilepath,true); // false同步 性能较低  ; true 异步
+ // false同步 性能较低  ; true 异步
+ xmlhttp.open("GET",getfilepath,true);
  xmlhttp.send();
 }
 </code>

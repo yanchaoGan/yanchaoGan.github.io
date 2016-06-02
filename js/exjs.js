@@ -26,7 +26,8 @@ function getJsStyle(id,styleName){
 
 // 更新类名
 function updateClass(id,classname){
-  $(id).className = classname;
+  var op = document.getElementById(id);
+  op.className = classname;
 }
 
 

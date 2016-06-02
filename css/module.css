@@ -9,7 +9,7 @@ p{
   text-indent:2em
 }
 a{
-  text-decoration:overline;
+  /*text-decoration:overline;*/
   color: white;
 }
 

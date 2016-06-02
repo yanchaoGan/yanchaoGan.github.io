@@ -68,7 +68,7 @@ function loadContent(){
     filepath = '../blog/message/'+modulePageName;
   }
   loadRequest(filepath,function(result){
-    console.log(result);
+    // console.log(result);
      $('#moduleContent').html(result);
   });
 }

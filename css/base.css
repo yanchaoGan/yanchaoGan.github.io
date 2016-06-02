@@ -191,6 +191,9 @@ blog
   font-size: 1em;
   margin-top: 10px;
 }
+.blogdesinfoselect{
+  color: rgb(6, 102, 198);
+}
 /*更多按钮*/
 .blogMore{
   margin-top: 10px;
