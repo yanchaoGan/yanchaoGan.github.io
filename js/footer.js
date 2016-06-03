@@ -1,11 +1,4 @@
-function footer(){
-  document.write(' <footer class="footer"> \
-        <div class="footercenter">  \
-          ©2016 gychao 2016-05-01 <a href="#" onclick="showVersion()">v2.0.0</a>  \
-        </div> \
-    </footer>'
-  )
-}
+
 
 // 在module 页面 点击了 版本。 就在这个页面刷新
 function showVersion() {

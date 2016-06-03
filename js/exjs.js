@@ -30,6 +30,18 @@ function updateClass(id,classname){
   op.className = classname;
 }
 
+var MYVERSION = '2.0.1';
+function footer(){
+  var s = ' <footer class="footer"> \
+        <div class="footercenter">  \
+          ©2016 gychao 2016-05-01 <a href="#" onclick="showVersion()">'
+          + MYVERSION+
+          '</a>  \
+        </div> \
+    </footer>'
+  document.write(s)
+}
+
 
 
 /*
