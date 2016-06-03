@@ -61,6 +61,31 @@ img{
   padding-right: 10px;
 }
 
+.bigImageContain{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgb(0, 0, 0);
+  z-index: 200;
+  display: none;
+}
+.bigImageContainShow{
+  display: block;
+}
+.imageBG{
+  position: relative;
+  width: 650px;
+  height: 650px;
+  left: 50%;
+  margin-left: -325px;
+  margin-top: 100px;
+}
+.bigImageContent{
+
+}
+
 /*多说*/
 .dsmodule{
   position: relative;;

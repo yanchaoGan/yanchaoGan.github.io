@@ -14,6 +14,17 @@
 
 
   <body>
+
+    <img src="./images/mbox.png" alt="" />
+    <script type="text/javascript">
+        var ps = document.getElementsByTagName('img');
+        for (var p in ps) {
+          console.log(p);
+          var v = ps['0'];
+          console.log(v.src);
+        }
+    </script>
+
 我最爱
 <!-- 在html 中， 换行 空格 文字，都算 childnode，类型是 ＃text
   childNodes ，只找下一级子节点

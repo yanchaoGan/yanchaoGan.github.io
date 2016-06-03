@@ -70,7 +70,32 @@ function loadContent(){
   loadRequest(filepath,function(result){
     // console.log(result);
      $('#moduleContent').html(result);
+     addImageClickEvent();
   });
+}
+
+function addImageClickEvent() {
+  // 然后给所有的pic 写在多说之前， 添加alert方法
+  var pics = document.getElementsByTagName('img');
+  for (var i =0; i<pics.length;i++ ) {
+    var img = pics[i.toString()];
+    var name = img.className;
+    console.log(name);
+    if (img.className == null || img.className == undefined || img.className == '') {
+      img.onclick = function(){
+        // alert(img.src);
+        var op = document.getElementById('bigImageContain');
+        op.onclick = function(){
+          op.className = 'bigImageContain';
+        }
+        op.className = 'bigImageContain bigImageContainShow';
+
+        var content = document.getElementsByClassName('bigImageContent')[0];
+        content.src = this.src;
+      }
+    }
+
+  }
 }
 
 
