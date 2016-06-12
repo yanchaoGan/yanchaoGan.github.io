@@ -10,7 +10,9 @@ css 注释
   padding: 0px 0px;
   border: 0;
 }
-
+body{
+  height: 100%;
+}
 
 hr{
   border-top-width: 1px;
@@ -31,8 +33,9 @@ p{
   width: 100%;
   height: 100%;
   min-width: 224px;
-  /*background: #666666 url(/images/bgIndex.png) no-repeat ;*/
-  /*background-size: cover;*/
+  background: #666666 url(../images/bgIndex.png) no-repeat; /*使用颜色 防止brower
+  禁止显示*/
+  background-size: cover;
   /*background-clip: border-box;*/
   position: fixed;
   text-align: center;
@@ -41,6 +44,9 @@ p{
   font-size: 20px;
   /*margin: 0px 0px;*/
   z-index: 300;
+}
+.indexHidden{
+  display: none;
 }
 /*
   居中
@@ -236,6 +242,24 @@ blog
 .footercenter{
   color: white;
   margin-top: 14px;
+}
+
+@media screen and (max-width:500px) {
+  /*如果屏幕分辨率 <=500px
+    当然也可以使用 js 判断 brower
+   */
+   /*.index{
+     display: none;
+   }*/
+   .center{
+     top: 10px;
+   }
+   .blog{
+     width: 100%;
+     left: 0px;
+    }
+
+
 }
 
 /*@media all and (min-width:500px) {
