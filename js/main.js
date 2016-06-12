@@ -1,20 +1,10 @@
 
 function showAnimate(){
-
   var classNameOfIndex = document.getElementById('index').className;
-
-  //首先判断浏览器窗口
-  var width = window.innerWidth;
-  console.log(width);
-  if (width <= 500) {
-    document.getElementById('index').className =  classNameOfIndex + ' '+'indexHidden';
-      return;
-  }
-  // 移动
   if (classNameOfIndex.indexOf('moveindex') == -1){
     document.getElementById('index').className = classNameOfIndex + ' '+'moveindex';
   }else {
-    // console.log('已经更改了class');
+    console.log('已经更改了class');
   }
   // $('#index').animate({width:"100px"});
 }
@@ -193,7 +183,7 @@ function sideBlog(){
       filepath = '.'+filepath;// 使用相对路径
       //console.log(filename);
       loadRequest(filepath,function(result,index){
-        // console.log(myobj , index,result);
+        console.log(myobj , index,result);
         filename = myobj[index].filename;
         filedate = myobj[index].filetime;
         filepath = myobj[index].filepath;
